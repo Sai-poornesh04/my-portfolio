@@ -2,12 +2,12 @@
 const currentYear = new Date().getFullYear();
 const socialLinks = [
   {
-    href: "https://github.com/your-username",
+    href: "https://github.com/Sai-poornesh04",
     label: "GitHub",
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>',
   },
   {
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://www.linkedin.com/in/sai-poornesh-kavili-0b4bab220/",
     label: "LinkedIn",
     icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"></path></svg>',
   },
@@ -15,49 +15,255 @@ const socialLinks = [
 const techStack = ["Java", "Spring Boot", "Kotlin", "Angular", "Azure", "AWS", "Splunk", "HALO"];
 ---
 
-<footer class="w-full py-12 border-t border-[#ffffff10]">
-  <div class="max-w-5xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
-      <div class="flex flex-col lg:items-start items-center space-y-6 gap-9">
-        <div class="flex space-x-6 sm:space-x-8">
+<footer class="footer-shell">
+  <div class="footer-inner max-w-5xl mx-auto">
+    <div class="footer-grid">
+      <div class="footer-socials">
+        <div class="footer-tagline-wrap">
+          <span class="footer-tagline">Built with Astro</span>
+        </div>
+        <div class="icon-row">
           {
             socialLinks.map((link) => (
               <a
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                class="flex flex-col items-center group"
+                class="social-link"
                 aria-label={link.label}
               >
-                <div class="text-[var(--white-icon)] hover:text-[var(--white)] transition duration-300 ease-in-out">
-                  <div set:html={link.icon} />
-                </div>
+                <div set:html={link.icon} />
               </a>
             ))
           }
         </div>
       </div>
 
-      <div class="flex flex-col items-center lg:items-start space-y-6">
-        <div class="w-full max-w-md">
-          <p class="text-xs uppercase tracking-[0.2em] text-[var(--white-icon)] mb-3">
-            Core stack
-          </p>
-          <div class="flex flex-wrap gap-2">
+      <div class="footer-stack">
+        <div class="availability-row">
+          <span class="availability-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Available for opportunities
+          </span>
+        </div>
+        <div class="footer-stack-copy">
+          <p class="stack-header">Core stack</p>
+          <div class="tech-stack-row">
             {techStack.map((item) => (
-              <span class="rounded-full border border-[var(--white-icon-tr)] bg-[#1414149c] px-3 py-1.5 text-sm text-[var(--white)]">
-                {item}
-              </span>
+              <span class="tech-pill">{item}</span>
             ))}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-[#ffffff10]">
-      <p class="text-center text-sm text-[var(--white-icon)] space-y-2">
-        <span class="block sm:inline">Copyright © {currentYear} Sai Poornesh Kavili. All rights reserved.</span>
-      </p>
+    <div class="footer-bottom">
+      <p>Copyright © {currentYear} Sai Poornesh Kavili. All rights reserved.</p>
     </div>
   </div>
 </footer>
+
+<style is:global>
+  .footer-shell {
+    position: relative;
+    width: 100%;
+    padding: 2rem 0 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.35), rgba(20, 20, 20, 0));
+  }
+
+  .footer-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(164, 118, 255, 0.8), rgba(73, 255, 160, 0.7), transparent);
+    opacity: 0.9;
+  }
+
+  .footer-inner {
+    position: relative;
+    z-index: 1;
+    padding: 0 1.25rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .footer-tagline-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--white-icon);
+  }
+
+  .icon-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(20, 20, 20, 0.5);
+    color: var(--white-icon);
+    transition: transform 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .social-link:hover,
+  .social-link:focus-visible {
+    transform: translateY(-2px) scale(1.02);
+    border-color: rgba(164, 118, 255, 0.7);
+    color: var(--white);
+    box-shadow: 0 12px 24px rgba(122, 80, 198, 0.16);
+    outline: none;
+  }
+
+  .social-link svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .footer-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+  }
+
+  .availability-row {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .availability-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(73, 255, 160, 0.28);
+    background: rgba(13, 24, 17, 0.9);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(212, 255, 236, 0.92);
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: #59ff9d;
+    box-shadow: 0 0 0 0 rgba(89, 255, 157, 0.7);
+    animation: pulse-dot 2.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0% {
+      box-shadow: 0 0 0 0 rgba(89, 255, 157, 0.72);
+      opacity: 1;
+    }
+    70% {
+      box-shadow: 0 0 0 8px rgba(89, 255, 157, 0);
+      opacity: 0.85;
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(89, 255, 157, 0);
+      opacity: 1;
+    }
+  }
+
+  .footer-stack-copy {
+    width: 100%;
+    max-width: 32rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.7rem;
+  }
+
+  .stack-header {
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white-icon);
+  }
+
+  .tech-stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .tech-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.42rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(20, 20, 20, 0.5);
+    color: var(--white);
+    font-size: 0.76rem;
+  }
+
+  .footer-bottom {
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    color: var(--white-icon);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 767px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .footer-socials,
+    .footer-stack,
+    .footer-stack-copy {
+      align-items: flex-start;
+    }
+
+    .availability-row,
+    .tech-stack-row {
+      justify-content: flex-start;
+    }
+
+    .footer-inner {
+      padding: 0 1rem;
+    }
+  }
+</style>

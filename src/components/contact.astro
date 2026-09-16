@@ -1,56 +1,371 @@
-<section id="contact" class="w-full py-12 border-t border-[#ffffff10]">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Let's talk</h2>
-    <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
-      Contact
-    </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="text-[var(--white-icon)] space-y-4">
-        <p>
-          I’m currently working on a Netherlands-based client project with Cognizant,
-          and I’m open to conversations around backend engineering, cloud delivery,
-          and operations-focused development.
-        </p>
-        <div class="space-y-2">
-          <div class="flex items-center gap-2">
-            <span>Role:</span>
-            <span class="text-[var(--white)]">DevOps Engineer</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span>Experience:</span>
-            <span class="text-[var(--white)]">1.5–2 years</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span>Focus:</span>
-            <span class="text-[var(--white)]">Java, Azure, AWS, monitoring</span>
-          </div>
+<section id="contact" class="contact-section">
+  <div class="contact-ambient" aria-hidden="true"></div>
+  <div class="contact-grid max-w-5xl mx-auto">
+    <div class="contact-copy">
+      <p class="contact-kicker shiny-sec">Let's talk</p>
+      <h3 class="contact-title">Contact</h3>
+      <p class="contact-bio">
+        I’m currently working on a Netherlands-based client project with Cognizant,
+        and I’m open to conversations around backend engineering, cloud delivery,
+        and operations-focused development.
+      </p>
+
+      <div class="stat-grid" aria-label="Profile highlights">
+        <div class="stat-card">
+          <span class="stat-label">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v1h20v-1c0-3.33-6.67-5-10-5z"/></svg>
+            Role
+          </span>
+          <strong>DevOps Engineer</strong>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11zM7 11h5v2H7zm0 4h10v2H7z"/></svg>
+            Experience
+          </span>
+          <strong>1.5–2 years</strong>
+        </div>
+
+        <div class="stat-card stat-card--wide">
+          <span class="stat-label">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13zm2.5-.5a.5.5 0 0 0-.5.5v13c0 .28.22.5.5.5h13a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-13zm2 3h9v2h-9V8zm0 4h9v2h-9v-2z"/></svg>
+            Focus
+          </span>
+          <strong>Java, Azure, AWS, monitoring</strong>
         </div>
       </div>
+    </div>
 
-      <div class="flex flex-col gap-4">
-        <a
-          href="https://linkedin.com/in/your-profile"
-          target="_blank"
-          rel="noreferrer"
-          class="flex items-center justify-between gap-3 rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] px-4 py-3 text-[var(--white)] transition hover:border-[var(--sec)] hover:bg-[var(--white-icon-tr)]"
-        >
-          <span>LinkedIn</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+    <div class="contact-actions">
+      <a
+        href="https://www.linkedin.com/in/sai-poornesh-kavili-0b4bab220/"
+        target="_blank"
+        rel="noreferrer"
+        class="social-button social-button--linkedin"
+      >
+        <span class="social-copy">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z" />
           </svg>
-        </a>
-        <a
-          href="https://github.com/your-username"
-          target="_blank"
-          rel="noreferrer"
-          class="flex items-center justify-between gap-3 rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] px-4 py-3 text-[var(--white)] transition hover:border-[var(--sec)] hover:bg-[var(--white-icon-tr)]"
-        >
-          <span>GitHub</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+          <span>LinkedIn</span>
+        </span>
+        <span class="social-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a
+        href="https://github.com/Sai-poornesh04"
+        target="_blank"
+        rel="noreferrer"
+        class="social-button social-button--github"
+      >
+        <span class="social-copy">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z" />
           </svg>
-        </a>
-      </div>
+          <span>GitHub</span>
+        </span>
+        <span class="social-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>
+
+<style is:global>
+  .contact-section {
+    position: relative;
+    width: 100%;
+    padding: 5rem 0 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 400ms ease, transform 400ms ease;
+  }
+
+  .contact-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .contact-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 2rem;
+    align-items: center;
+    padding: 0 1.25rem;
+  }
+
+  .contact-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-kicker {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .contact-title {
+    margin: 0;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+    font-weight: 600;
+    color: var(--white);
+    background: linear-gradient(135deg, rgba(164, 118, 255, 1), rgba(214, 196, 255, 1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .contact-bio {
+    max-width: 38rem;
+    margin: 0;
+    color: var(--white-icon);
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1rem 0.9rem;
+    border-radius: 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(20, 20, 20, 0.66);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    min-height: 120px;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(164, 118, 255, 0.5);
+    box-shadow: 0 18px 40px rgba(104, 74, 164, 0.12);
+  }
+
+  .stat-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white-icon);
+  }
+
+  .stat-label svg {
+    width: 0.9rem;
+    height: 0.9rem;
+    fill: currentColor;
+    opacity: 0.9;
+  }
+
+  .stat-card strong {
+    font-size: 1rem;
+    line-height: 1.45;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .stat-card--wide {
+    grid-column: span 1;
+  }
+
+  .contact-actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    justify-self: stretch;
+  }
+
+  .social-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(20, 20, 20, 0.72);
+    color: var(--white);
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  }
+
+  .social-button:hover,
+  .social-button:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(164, 118, 255, 0.8);
+    box-shadow: 0 18px 38px rgba(122, 80, 198, 0.18);
+    background: rgba(24, 24, 28, 0.9);
+  }
+
+  .social-button:focus-visible {
+    outline: 2px solid rgba(164, 118, 255, 0.9);
+    outline-offset: 3px;
+  }
+
+  .social-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .social-copy svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    transition: transform 180ms ease;
+  }
+
+  .social-button:hover .social-copy svg,
+  .social-button:focus-visible .social-copy svg {
+    transform: translateX(3px) scale(1.08);
+  }
+
+  .social-arrow {
+    font-size: 1.5rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.82);
+    transition: transform 180ms ease;
+  }
+
+  .social-button:hover .social-arrow,
+  .social-button:focus-visible .social-arrow {
+    transform: translateX(5px);
+  }
+
+  .contact-ambient {
+    position: absolute;
+    inset: 12% auto auto 10%;
+    width: min(32rem, 56vw);
+    height: min(22rem, 38vw);
+    border-radius: 40% 60% 58% 42% / 40% 42% 58% 60%;
+    background: radial-gradient(circle at 30% 35%, rgba(164, 118, 255, 0.28), transparent 42%),
+      radial-gradient(circle at 68% 70%, rgba(66, 217, 165, 0.16), transparent 42%),
+      linear-gradient(135deg, rgba(164, 118, 255, 0.06), rgba(66, 217, 165, 0.04));
+    filter: blur(20px);
+    opacity: 0.92;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition: transform 180ms ease-out;
+    pointer-events: none;
+  }
+
+  .contact-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(circle at center, black 28%, transparent 82%);
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  @media (max-width: 767px) {
+    .contact-section {
+      padding: 4rem 0 3rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      padding: 0 1rem;
+    }
+
+    .stat-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-actions {
+      gap: 0.7rem;
+    }
+
+    .social-button {
+      width: 100%;
+    }
+
+    .contact-ambient {
+      inset: 8% auto auto 5%;
+      width: 70vw;
+      height: 18rem;
+      opacity: 0.5;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stat-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-section,
+    .stat-card,
+    .social-button,
+    .social-button .social-copy svg,
+    .social-button .social-arrow,
+    .contact-ambient {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<script>
+  const contactSection = document.getElementById("contact");
+  const ambient = document.querySelector(".contact-ambient");
+
+  if (contactSection && ambient && window.matchMedia("(pointer: fine)").matches && window.innerWidth > 767) {
+    contactSection.addEventListener("pointermove", (event) => {
+      const rect = contactSection.getBoundingClientRect();
+      const offsetX = ((event.clientX - rect.left) / rect.width - 0.5) * 28;
+      const offsetY = ((event.clientY - rect.top) / rect.height - 0.5) * 24;
+      ambient.setAttribute(
+        "style",
+        `transform: translate3d(${offsetX}px, ${offsetY}px, 0) scale(1.06);`
+      );
+    });
+
+    contactSection.addEventListener("pointerleave", () => {
+      ambient.setAttribute("style", "transform: translate3d(0, 0, 0) scale(1);");
+    });
+  }
+
+  if (contactSection) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    observer.observe(contactSection);
+  }
+</script>
