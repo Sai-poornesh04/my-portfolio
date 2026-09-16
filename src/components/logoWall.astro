@@ -1,19 +1,19 @@
 ---
 const technologies = [
-  "astro",
-  "vue",
-  "react",
-  "typeScript",
-  "tailwindcss",
-  "next",
-  "nodejs",
-  "HTML5",
-  "CSS3",
-  "javaScript",
-  "git",
-  "supabase",
-  "mysql",
-  "bash",
+  { name: "Java", icon: null },
+  { name: "Spring Boot", icon: null },
+  { name: "Kotlin", icon: null },
+  { name: "Angular", icon: null },
+  { name: "Azure DevOps", icon: null },
+  { name: "Azure", icon: null },
+  { name: "AWS", icon: null },
+  { name: "Splunk", icon: null },
+  { name: "HALO", icon: null },
+  { name: "JUnit5", icon: null },
+  { name: "Git", icon: "git" },
+  { name: "Bash", icon: "bash" },
+  { name: "TypeScript", icon: "typeScript" },
+  { name: "TailwindCSS", icon: "tailwindcss" },
 ];
 ---
 
@@ -24,21 +24,27 @@ const technologies = [
   <div class="flex animate-scroll w-max will-change-transform">
     {
       [...technologies, ...technologies].map((tech, index) => (
-        <div 
+        <div
           class="flex items-center gap-2 pr-12 md:pr-20 group transition-all duration-300"
           aria-hidden={index >= technologies.length ? "true" : "false"}
         >
-          <img
-            src={`/svg/${tech}.svg`}
-            alt={tech}
-            class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
-            width="30"
-            height="30"
-            loading={index < technologies.length ? "eager" : "lazy"}
-            decoding="async"
-          />
+          {tech.icon ? (
+            <img
+              src={`/svg/${tech.icon}.svg`}
+              alt={tech.name}
+              class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
+              width="30"
+              height="30"
+              loading={index < technologies.length ? "eager" : "lazy"}
+              decoding="async"
+            />
+          ) : (
+            <span class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[var(--white-icon-tr)] bg-[#1414149c] text-[10px] font-semibold text-[var(--white)]">
+              {tech.name.slice(0, 2).toUpperCase()}
+            </span>
+          )}
           <span class="text-lg font-medium text-[var(--white-icon)] whitespace-nowrap">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
+            {tech.name}
           </span>
         </div>
       ))
