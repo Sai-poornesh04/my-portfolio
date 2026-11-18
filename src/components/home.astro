@@ -8,10 +8,6 @@ import SkillsList from "../React/SkillsList.tsx";
   <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
     <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
       <div class="w-full md:w-[60%] text-left space-y-5">
-        <p class="text-[11px] md:text-xs uppercase tracking-[0.28em] text-[var(--white-icon)]">
-          DevOps Engineer • Java • Spring Boot • Azure • AWS
-        </p>
-
         <div class="space-y-4">
           <h1 class="text-[var(--white)] text-5xl sm:text-6xl md:text-7xl font-semibold leading-[0.9] tracking-[-0.07em]">
             Sai Poornesh
@@ -28,17 +24,28 @@ import SkillsList from "../React/SkillsList.tsx";
         </div>
 
         <p class="max-w-2xl text-base md:text-xl text-[var(--white-icon)] leading-relaxed">
-          I build and support reliable cloud-native systems with a focus on backend
-          delivery, deployment automation, monitoring, and incident-aware operations.
+          DevOps and backend engineer building and running fintech systems on Java
+          Spring Boot, Kotlin and Angular. I ship reliable releases through CI/CD
+          to the cloud, keep production healthy, and build security into every
+          release.
         </p>
 
         <div class="flex flex-wrap justify-start gap-3 pt-2 md:pt-3">
           <a
             target="_blank"
-            href="https://www.linkedin.com/in/sai-poornesh-kavili-0b4bab220/"
+            rel="noreferrer"
+            href="/Kavili_Sai_Poornesh_CV.pdf"
             class="inline-flex items-center justify-center rounded-full border border-[var(--sec)] bg-[var(--sec)]/10 px-5 py-2.5 text-sm font-medium text-[var(--white)] transition hover:bg-[var(--sec)]/20"
           >
-            View LinkedIn
+            View / Download Resume
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/sai-poornesh-kavili-0b4bab220/"
+            class="inline-flex items-center justify-center rounded-full border border-[var(--white-icon-tr)] bg-[#1414149c] px-5 py-2.5 text-sm font-medium text-[var(--white)] transition hover:bg-[var(--white-icon-tr)]"
+          >
+            LinkedIn
           </a>
           <a
             target="_blank"
@@ -62,12 +69,14 @@ import SkillsList from "../React/SkillsList.tsx";
       </div>
 
       <div class="flex w-full justify-center md:w-[40%] md:justify-end">
-        <div class="profile-photo-shell">
-          <img
-            src="/images/profile1.jpeg"
-            alt="Sai Poornesh Kavili"
-            class="profile-photo"
-          />
+        <div class="profile-photo-orbit">
+          <div class="profile-photo-shell">
+            <img
+              src="/images/profile1.jpeg"
+              alt="Sai Poornesh Kavili"
+              class="profile-photo"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -117,6 +126,43 @@ import SkillsList from "../React/SkillsList.tsx";
 </section>
 
 <style is:global>
+  .profile-photo-orbit {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: min(82vw, 330px);
+    aspect-ratio: 1;
+    isolation: isolate;
+  }
+
+  .profile-photo-orbit::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 132%;
+    height: 55%;
+    border: 1px solid rgba(223, 223, 223, 0.48);
+    border-left-color: rgba(164, 118, 255, 0.9);
+    border-right-color: rgba(169, 255, 91, 0.8);
+    border-radius: 50%;
+    transform: rotate(-28deg);
+    pointer-events: none;
+  }
+
+  .profile-photo-orbit::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 18%;
+    right: 12%;
+    width: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #a9ff5b;
+    box-shadow: 0 0 12px rgba(169, 255, 91, 0.8);
+    pointer-events: none;
+  }
+
   .profile-photo-shell {
     position: relative;
     display: flex;
@@ -177,6 +223,10 @@ import SkillsList from "../React/SkillsList.tsx";
   }
 
   @media (max-width: 767px) {
+    .profile-photo-orbit {
+      width: min(70vw, 230px);
+    }
+
     .profile-photo-shell {
       width: min(58vw, 180px);
       box-shadow: 0 0 0 1px rgba(164, 118, 255, 0.45), 0 12px 28px rgba(113, 79, 164, 0.3);

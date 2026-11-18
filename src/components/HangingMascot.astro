@@ -1,0 +1,201 @@
+---
+import MascotArt from "./MascotArt.astro";
+
+interface Props {
+  src?: string;
+}
+
+const { src } = Astro.props;
+---
+
+<!-- Replace MascotArt (or pass src/use the default slot) to swap artwork; tune MAX_DROP_RATIO and IDLE_SWAY_DEGREES below. -->
+<div class="hanging-mascot" data-hanging-mascot aria-hidden="true">
+  <div class="hanging-mascot__sway">
+    <div class="hanging-mascot__group" data-mascot-group>
+      <div class="hanging-mascot__thread" data-mascot-thread></div>
+      <div class="hanging-mascot__art">
+        {
+          src ? (
+            <img src={src} alt="" />
+          ) : (
+            <slot>
+              <MascotArt />
+            </slot>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hanging-mascot {
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    right: 4vw;
+    width: 70px;
+    pointer-events: none;
+  }
+
+  .hanging-mascot__sway {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: top center;
+    animation: hanging-mascot-sway 4s ease-in-out infinite;
+  }
+
+  .hanging-mascot__group {
+    position: relative;
+    width: 100%;
+    height: calc(var(--mascot-thread-length, 0px) + 84px);
+    transform: rotate(var(--mascot-velocity-swing, 0deg));
+    transform-origin: top center;
+    will-change: transform;
+  }
+
+  .hanging-mascot__thread {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: var(--mascot-thread-length, 0px);
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, #a3e635, #a476ff);
+    box-shadow: 0 0 8px #a3e63555;
+  }
+
+  .hanging-mascot__art {
+    position: absolute;
+    top: var(--mascot-thread-length, 0px);
+    left: 50%;
+    width: 70px;
+    height: 84px;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 8px #a3e63555);
+  }
+
+  .hanging-mascot__art :global(svg),
+  .hanging-mascot__art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @keyframes hanging-mascot-sway {
+    0%,
+    100% {
+      transform: rotate(var(--mascot-idle-sway-negative, -3deg));
+    }
+
+    50% {
+      transform: rotate(var(--mascot-idle-sway, 3deg));
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hanging-mascot {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hanging-mascot__sway {
+      animation: none;
+    }
+
+    .hanging-mascot__group {
+      --mascot-thread-length: 8rem !important;
+      --mascot-velocity-swing: 0deg !important;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  const MAX_DROP_RATIO = 0.65;
+  const IDLE_SWAY_DEGREES = 3;
+  const SWING_DECAY_MS = 450;
+  const MAX_VELOCITY_SWING_DEGREES = 8;
+
+  document.querySelectorAll<HTMLElement>("[data-hanging-mascot]").forEach((mascot) => {
+    const group = mascot.querySelector<HTMLElement>("[data-mascot-group]");
+    const thread = mascot.querySelector<HTMLElement>("[data-mascot-thread]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (!group || !thread) return;
+    const activeGroup = group;
+    const activeThread = thread;
+
+    mascot.style.setProperty("--mascot-idle-sway", `${IDLE_SWAY_DEGREES}deg`);
+    mascot.style.setProperty(
+      "--mascot-idle-sway-negative",
+      `${-IDLE_SWAY_DEGREES}deg`,
+    );
+
+    if (reducedMotion.matches) {
+      thread.style.height = "8rem";
+      group.style.setProperty("--mascot-thread-length", "8rem");
+      return;
+    }
+
+    let targetLength = 0;
+    let currentLength = 0;
+    let swingTarget = 0;
+    let currentSwing = 0;
+    let previousScrollY = window.scrollY;
+    let previousScrollTime = performance.now();
+    let previousFrameTime = 0;
+    let frameId = 0;
+    let destroyed = false;
+
+    function updateTarget() {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? Math.min(Math.max(window.scrollY / maxScroll, 0), 1) : 0;
+      targetLength = progress * window.innerHeight * MAX_DROP_RATIO;
+
+      const now = performance.now();
+      const elapsed = Math.max(now - previousScrollTime, 16);
+      const velocity = (window.scrollY - previousScrollY) / elapsed;
+      swingTarget = Math.max(
+        -MAX_VELOCITY_SWING_DEGREES,
+        Math.min(velocity * 0.02, MAX_VELOCITY_SWING_DEGREES),
+      );
+      previousScrollY = window.scrollY;
+      previousScrollTime = now;
+    }
+
+    function animate(now: number) {
+      if (destroyed) return;
+
+      const frameElapsed = previousFrameTime
+        ? Math.min(now - previousFrameTime, 64)
+        : 16.7;
+      previousFrameTime = now;
+      currentLength += (targetLength - currentLength) * 0.08;
+      currentSwing += (swingTarget - currentSwing) * 0.08;
+      swingTarget *= Math.exp(-frameElapsed / SWING_DECAY_MS);
+
+      activeThread.style.height = `${currentLength}px`;
+      activeGroup.style.setProperty("--mascot-thread-length", `${currentLength}px`);
+      activeGroup.style.setProperty("--mascot-velocity-swing", `${currentSwing}deg`);
+
+      frameId = window.requestAnimationFrame(animate);
+    }
+
+    function cleanup() {
+      destroyed = true;
+      window.removeEventListener("scroll", updateTarget);
+      window.cancelAnimationFrame(frameId);
+    }
+
+    updateTarget();
+    window.addEventListener("scroll", updateTarget, { passive: true });
+    frameId = window.requestAnimationFrame(animate);
+    document.addEventListener("astro:before-swap", cleanup, { once: true });
+    window.addEventListener("pagehide", cleanup, { once: true });
+  });
+</script>

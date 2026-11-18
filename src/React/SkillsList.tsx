@@ -2,13 +2,13 @@ import { useState } from "react";
 
 const CategoryIcons = {
   "Application & Backend": (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-server-cog text-[var(--sec)]"><path d="M4 12h16"/><path d="M5 6h14"/><path d="M7 18h10"/><circle cx="12" cy="9" r="2"/><path d="M12 15v2"/><path d="M15.5 15.5 17 17"/><path d="M8.5 15.5 7 17"/><path d="M12 18v2"/><path d="M8.5 20.5 7 19"/><path d="M15.5 20.5 17 19"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-server-cog text-[var(--sec)]"><path d="M4 12h16"/><path d="M5 6h14"/><path d="M7 18h10"/><circle cx="12" cy="9" r="2"/><path d="M12 15v2"/><path d="M15.5 15.5 17 17"/><path d="M8.5 15.5 7 17"/><path d="M12 18v2"/><path d="M8.5 20.5 7 19"/><path d="M15.5 20.5 17 19"/></svg>
   ),
   "Frontend & Web": (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-monitor text-[var(--sec)]"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-monitor text-[var(--sec)]"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
   ),
   "Cloud & Monitoring": (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-cloud text-[var(--sec)]"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.5 2.5A4.5 4.5 0 0 0 6.5 19Z"/><path d="M12 9v6"/><path d="M9.5 12h5"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cloud text-[var(--sec)]"><path d="M17.5 19a4.5 4.5 0 0 0 .5-9 6 6 0 0 0-11.5 2.5A4.5 4.5 0 0 0 6.5 19Z"/><path d="M12 9v6"/><path d="M9.5 12h5"/></svg>
   ),
 };
 
